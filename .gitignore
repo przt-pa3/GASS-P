@@ -6,7 +6,8 @@
 Debug/
 Binaries/
 Saved/
-
+Content/**/Flipbooks/
+Content/StarterContent/HDRI/
 
 ### C++ ###
 # Prerequisites
