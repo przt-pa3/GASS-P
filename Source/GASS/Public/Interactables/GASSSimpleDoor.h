@@ -23,5 +23,8 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere)
+	TArray<FInteractionOption> Options;
+
+	UPROPERTY(EditAnywhere)
 	FInteractionOption Option;
 };

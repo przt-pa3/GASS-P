@@ -15,5 +15,11 @@ AGASSSimpleDoor::AGASSSimpleDoor()
 void AGASSSimpleDoor::GatherInteractionOptions(const FInteractionQuery& InteractQuery, FInteractionOptionBuilder& InteractionBuilder)
 {
 	InteractQuery.OptionalObjectData;
-	InteractionBuilder.AddInteractionOption(Option);
+
+	//InteractionBuilder.AddInteractionOption(Option);
+
+	for (auto Op : Options)
+	{
+		InteractionBuilder.AddInteractionOption(Op);
+	}
 }

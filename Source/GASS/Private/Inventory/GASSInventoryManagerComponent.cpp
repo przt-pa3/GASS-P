@@ -118,8 +118,6 @@ void FGASSInventoryList::PostReplicatedChange(const TArrayView<int32> ChangedInd
 		UGASSInventoryManagerComponent* OwnerIMC = Cast<UGASSInventoryManagerComponent>(OwnerComponent);
 		check(OwnerIMC);
 
-		//UE_LOG(LogTemp, Warning, TEXT("Index : %d, LastStack : %d -> CurrStack : %d, LastOffset : %d -> CurrentOffset : %d"), Index, Stack.LastObservedCount, Stack.CurrStackCount, Stack.LastObservedOffset, Stack.ItemOffsetR + Stack.ItemOffsetC);
-
 		if (Stack.CurrStackCount > Stack.LastObservedCount)
 		{
 			if (Stack.LastObservedCount == 0)

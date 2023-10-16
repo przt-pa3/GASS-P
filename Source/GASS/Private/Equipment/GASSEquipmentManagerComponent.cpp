@@ -883,13 +883,21 @@ void UGASSEquipmentManagerComponent::ChangeArmItem(int32 EquippedSlot)
 	if (!CanArmItem(EquippedSlot))
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Cannot Arm"));
+
+		if (GEngine)
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("Cannot Arm - Not Equipped")));
+
 		return;
 	}
-
+	
 	if (CurrentArmedSlot >= 0)
 	{
 		DisarmItem();
+		return;
 	}
+
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("Arm Item")));
 
 	ArmItem(EquippedSlot);
 }
